@@ -5,6 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CShark - Ciberseguridad</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Estilo para centrar el panel de valoración en la pantalla */
+        #valoracion {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 200px;
+        }
+
+        .rating {
+            display: flex;
+            justify-content: center;
+            gap: 5px; /* Espacio entre las estrellas */
+            font-size: 40px;
+            cursor: pointer;
+        }
+
+        .rating input {
+            display: none;
+        }
+
+        .rating label {
+            color: #ddd;
+            transition: color 0.3s ease;
+        }
+
+        /* Estilo cuando se pasa el ratón sobre las estrellas */
+        .rating input:checked ~ label,
+        .rating input:hover ~ label,
+        .rating label:hover,
+        .rating label:hover ~ label {
+            color: #ffb400;
+        }
+
+        /* Cambio de color de las estrellas al seleccionarlas */
+        .rating input:checked + label {
+            color: #ffb400;
+        }
+
+        /* Aseguramos que la sección de valoración se queda al final */
+        footer {
+            margin-top: auto;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -16,38 +71,38 @@
             <ul>
                 <li><a href="#presentacion">Inicio</a></li>
                 <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#Nosotros">Nosotros</a></li>
-                <li><a href="#Contacto">Contacto</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
     
     <!-- Sección de Presentación -->
     <section id="presentacion" class="hero">
-        <h2> Protege tu empresa, protege tu futuro</h2>
-        <p>Especialistas en ciberseguridad adapta a tus necesidades</p>
-        <a href="#contacto" class=""btn">Contáctanos</a>
+        <h2>Protege tu empresa, protege tu futuro</h2>
+        <p>Especialistas en ciberseguridad adaptados a tus necesidades</p>
+        <a href="#contacto" class="btn">Contáctanos</a>
     </section>
 
     <!-- Sección de servicios -->
     <section id="servicios">
-        <h2> Nuestros Servicios</h2>
+        <h2>Nuetros Servicios</h2>
         <div class="services-container">
             <div class="service">
                 <h3>Auditoría de Seguridad</h3>
-                <img src="/img/Auditoria.jpg"
+                <img src="/img/Auditoria.jpg" alt="Auditoría de Seguridad">
                 <p>Identificamos vulnerabilidades y ofrecemos soluciones avanzadas</p>
             </div>
             <div class="service">
-                <h3> Gestión de Incidentes</h3>
-                <img src="img/incidentes.png"
-                <p> Respondemos a amenazas cibernéticas con planes y análisis forense</p>
+                <h3>Gestión de Incidentes</h3>
+                <img src="img/incidentes.png" alt="Gestión de Incidentes">
+                <p>Respondemos a amenazas cibernéticas con planes y análisis forense</p>
             </div>
             <div class="service">
                 <h3>Formación en Ciberseguridad</h3>
-                <img src="/img/formación.png"
-                <p>Capacitación para proteger a tu equipo de ciberataque</p>
-            </div> 
+                <img src="/img/formación.png" alt="Formación en Ciberseguridad">
+                <p>Capacitación para proteger a tu equipo de ciberataques</p>
+            </div>
         </div>
     </section>
 
@@ -61,26 +116,53 @@
     </section>
 
     <!-- Sección de Contacto-->
-     <section id="contacto">
+    <section id="contacto">
         <h2>Contáctanos</h2>
-        <p>Escrínemos y descubre cómo podemos ayudarte a proteger tus datos</p>
-        <form actions="submit_form.php" method="POST">
+        <p>Escríbenos y descubre cómo podemos ayudarte a proteger tus datos</p>
+        <form action="submit_form.php" method="POST">
             <label for="nombre">Nombre:</label>
-            <input type="text" id="nomnbre" name="nombre" required>
+            <input type="text" id="nombre" name="nombre" required>
 
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
 
-            <label for="mensaje">Mensaje</label>
+            <label for="mensaje">Danos sugerencias para mejorar:</label>
             <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
 
             <button type="submit" class="btn">Enviar</button>
         </form>
-     </section>
+    </section>
 
-     <!-- Pie de Página -->
-      <footer>
+    <!-- Panel de Valoración con Estrellas justo encima del pie de página -->
+    <section id="valoracion">
+        <h2>Tu Opinión es Importante</h2>
+        <p>Por favor, califica nuestros servicios:</p>
+        <div class="rating">
+            <input type="radio" name="rating" id="star5">
+            <label for="star5">★</label>
+            <input type="radio" name="rating" id="star4">
+            <label for="star4">★</label>
+            <input type="radio" name="rating" id="star3">
+            <label for="star3">★</label>
+            <input type="radio" name="rating" id="star2">
+            <label for="star2">★</label>
+            <input type="radio" name="rating" id="star1">
+            <label for="star1">★</label>
+        </div>
+    </section>
+
+    <!-- Pie de Página -->
+    <footer>
         <p>&copy; 2025 CShark Consultoría en Ciberseguridad. Todos los derechos reservados</p>
-      </footer>
+    </footer>
+
+    <script>
+        const stars = document.querySelectorAll('.rating input');
+        stars.forEach(star => {
+            star.addEventListener('change', function() {
+                alert('Has calificado con ' + this.id.replace('star', '') + ' estrellas.');
+            });
+        });
+    </script>
 </body>
 </html>
