@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CShark - Ciberseguridad</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/img/tiburón.png" alt="Logo de CShark">
+            <h1>CShark Cibersecurity</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#presentacion">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#Nosotros">Nosotros</a></li>
+                <li><a href="#Contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Sección de Presentación -->
+    <section id="presentacion" class="hero">
+        <h2> Protege tu empresa, protege tu futuro</h2>
+        <p>Especialistas en ciberseguridad adapta a tus necesidades</p>
+        <a href="#contacto" class=""btn">Contáctanos</a>
+    </section>
+
+    <!-- Sección de servicios -->
+    <section id="servicios">
+        <h2> Nuestros Servicios</h2>
+        <div class="services-container">
+            <div class="service">
+                <h3>Auditoría de Seguridad</h3>
+                <img src="/img/Auditoria.jpg"
+                <p>Identificamos vulnerabilidades y ofrecemos soluciones avanzadas</p>
+            </div>
+            <div class="service">
+                <h3> Gestión de Incidentes</h3>
+                <img src="img/incidentes.png"
+                <p> Respondemos a amenazas cibernéticas con planes y análisis forense</p>
+            </div>
+            <div class="service">
+                <h3>Formación en Ciberseguridad</h3>
+                <img src="/img/formación.png"
+                <p>Capacitación para proteger a tu equipo de ciberataque</p>
+            </div> 
+        </div>
+    </section>
+
+    <!-- Sección de nosotros -->
+    <section id="nosotros">
+        <h2>¿Quiénes Somos?</h2>
+        <p>
+            En CShark, nuestro objetivo es convertir Navarra en un referente nacional en ciberseguridad.
+            Somos Iñaki Reta y Jael Zagal, apasionados por la informática, comprometidos a ofrecer soluciones innovadoras para proteger tu empresa.
+        </p>
+    </section>
+
+    <!-- Sección de Contacto-->
+     <section id="contacto">
+        <h2>Contáctanos</h2>
+        <p>Escrínemos y descubre cómo podemos ayudarte a proteger tus datos</p>
+        <form actions="submit_form.php" method="POST">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nomnbre" name="nombre" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+            <button type="submit" class="btn">Enviar</button>
+        </form>
+     </section>
+
+     <!-- Pie de Página -->
+      <footer>
+        <p>&copy; 2025 CShark Consultoría en Ciberseguridad. Todos los derechos reservados</p>
+      </footer>
+</body>
+</html>
